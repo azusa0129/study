@@ -14,7 +14,7 @@ public class Controller {
     @Autowired
     private Repository repository;
 
-    @GetMapping("/")
+    @GetMapping("main")
     public String mainTabi() {
         return "mainTabi";
     }
@@ -29,6 +29,11 @@ public class Controller {
         List<Domain> tabiList = repository.findAll();
         model.addAttribute("Tabi", tabiList);
         return "celebrationTabi";
+    }
+
+    @GetMapping("profileTabi")
+    public String profileTabi() {
+        return "profileTabi";
     }
 
     @PostMapping("celebrationTabi")
